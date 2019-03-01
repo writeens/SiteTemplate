@@ -337,7 +337,7 @@ body{
 }
 .info {
     grid-area: info;
-    height: 30vh;
+    height: auto;
     display: flex;
     justify-content: center;
     align-items: center;
