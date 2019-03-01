@@ -72,7 +72,7 @@ body{
 }
 .flex-item {
     flex: 1;
-    color: white;
+    color: black;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -96,16 +96,16 @@ body{
     text-align: center;
 }
 .flex-item > *:first-child{transform: translateY(-10px); color: rgba(54, 31, 182, 0)}
-.flex-item.open > *:first-child{transform: translateY(0); color: black;}
+.flex-item.open > *:first-child{transform: translateY(0); color: white;}
 .flex-item > *:last-child{transform: translateY(10px); color: rgba(54, 31, 182, 0)}
-.flex-item.open > *:last-child{transform: translateY(0); color: black; }
+.flex-item.open > *:last-child{transform: translateY(0); color: white; }
 
 .flex-open {
     flex: 5;
     font-size: 40px;
 }
-.black {
-    color: black;
+.white {
+    color: white;
 }
 .opaque {
     color: rgba(54, 31, 182, 0);
