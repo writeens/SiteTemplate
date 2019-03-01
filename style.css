@@ -391,9 +391,6 @@ body{
     background-color: var(--blue);
 }
 @media all and (max-width: 768px) {
-    body  {
-        background-color: red;
-    }
     .layer3 > div {
         max-width: 100vw;
     }
@@ -408,11 +405,11 @@ body{
     .navbar-toggle {
         visibility: unset;
     }
+    .input > input, .textarea > textarea{
+        margin: 0.5rem;
+    }
 }
 @media all and (max-width: 525px) {
-    body {
-        background-color: aqua;
-    }
     .flex-open {
         flex: 1;
         font-size: 20px;
@@ -451,7 +448,7 @@ body{
         width: 90vw;
     }
     .input > input, .textarea > textarea{
-        width: 100%;
+        width: 95%;
     }
     .form {
         display: flex;
