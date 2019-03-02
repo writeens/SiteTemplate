@@ -47,7 +47,7 @@ function animate() {
     layer1.forEach((item) => {
         isScrolledIntoViewPartial(item) ? item.classList.add("shake") : item.classList.remove("shake");
     });
-    isScrolledIntoViewPartial(layer2) ? layer2.classList.add("fadeInRight") : layer2.classList.remove("fadeInRight");
+    isScrolledIntoViewComplete(layer2) ? layer2.classList.add("fadeInRight") : layer2.classList.remove("fadeInRight");
     layer3.forEach((item) => {
         isScrolledIntoViewPartial(item) ? item.classList.add("fadeInLeft") : item.classList.remove("fadeInLeft");
     });
