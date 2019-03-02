@@ -17,6 +17,5 @@ function updateFlex() {
 // Handle the toggle menu;
 navbarToggle.addEventListener("click", showMenu);
 function showMenu() {
-    console.log("object");
     menu.classList.toggle("active");
 }
