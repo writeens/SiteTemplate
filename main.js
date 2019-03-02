@@ -5,7 +5,7 @@ let menu = document.querySelector("#js-menu");
 let items = document.querySelectorAll(".flex-item");
 let layer4 = document.querySelector(".layer4 > div");
 let layer3 = document.querySelectorAll(".layer3-col");
-let layer2 = document.querySelectorAll(".layer2-col");
+let layer2 = document.querySelector(".layer2 > div");
 let layer1 = document.querySelectorAll(".layer1-card");
 items.forEach(item => item.addEventListener("click", updateFlex));
 items.forEach(item => item.addEventListener("transitionend", updateText));
@@ -34,24 +34,22 @@ function isScrolledIntoViewComplete(elem) {
     return isVisible;
 }
 // to monitor partial scroll into view
-function isScrolledIntoViewPartial(elem) {
-    let rect = elem.getBoundingClientRect();
-    let elemTop = rect.top;
-    let elemBottom = rect.bottom;
+function isScrolledIntoViewPartial(elemp) {
+    let rect = elemp.getBoundingClientRect();
+    let elempTop = rect.top;
+    let elempBottom = rect.bottom;
     // for partial visibility
-    let isVisible = (elemTop < window.innerHeight) && elemBottom >= 0;
-    return isVisible;
+    let ispVisible = (elempTop < window.innerHeight) && elempBottom >= 0;
+    return ispVisible;
 }
 window.addEventListener("scroll", animate);
 function animate() {
     layer1.forEach((item) => {
-        isScrolledIntoViewComplete(item) ? item.classList.add("shake") : item.classList.remove("shake");
+        isScrolledIntoViewPartial(item) ? item.classList.add("shake") : item.classList.remove("shake");
     });
-    layer2.forEach((item) => {
-        isScrolledIntoViewComplete(item) ? item.classList.add("fadeInRight") : item.classList.remove("fadeInRight");
-    });
+    isScrolledIntoViewPartial(layer2) ? layer2.classList.add("fadeInRight") : layer2.classList.remove("fadeInRight");
     layer3.forEach((item) => {
-        isScrolledIntoViewComplete(item) ? item.classList.add("fadeInLeft") : item.classList.remove("fadeInLeft");
+        isScrolledIntoViewPartial(item) ? item.classList.add("fadeInLeft") : item.classList.remove("fadeInLeft");
     });
     isScrolledIntoViewPartial(layer4) ? layer4.classList.add("slideInRight") : layer4.classList.remove("slideInRight");
 }
