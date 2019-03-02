@@ -4,9 +4,9 @@ let navbarToggle = document.querySelector("#js-toggle");
 let menu = document.querySelector("#js-menu");
 let items = document.querySelectorAll(".flex-item");
 let layer4 = document.querySelector(".layer4 > div");
-let layer3 = document.querySelector(".layer3 > div");
-let layer2 = document.querySelector(".layer2 > div");
-let layer1 = document.querySelector(".layer1 > div");
+let layer3 = document.querySelectorAll(".layer3-col");
+let layer2 = document.querySelectorAll(".layer2-col");
+let layer1 = document.querySelectorAll(".layer1-card");
 items.forEach(item => item.addEventListener("click", updateFlex));
 items.forEach(item => item.addEventListener("transitionend", updateText));
 function updateText(e) {
@@ -44,8 +44,14 @@ function isScrolledIntoViewPartial(elem) {
 }
 window.addEventListener("scroll", animate);
 function animate() {
+    layer1.forEach((item) => {
+        isScrolledIntoViewComplete(item) ? item.classList.add("shake") : item.classList.remove("shake");
+    });
+    layer2.forEach((item) => {
+        isScrolledIntoViewComplete(item) ? item.classList.add("fadeInRight") : item.classList.remove("fadeInRight");
+    });
+    layer3.forEach((item) => {
+        isScrolledIntoViewComplete(item) ? item.classList.add("fadeInLeft") : item.classList.remove("fadeInLeft");
+    });
     isScrolledIntoViewPartial(layer4) ? layer4.classList.add("slideInRight") : layer4.classList.remove("slideInRight");
-    isScrolledIntoViewComplete(layer3) ? layer3.classList.add("fadeInLeft") : layer3.classList.remove("fadeInLeft");
-    isScrolledIntoViewComplete(layer2) ? layer2.classList.add("fadeInRight") : layer2.classList.remove("fadeInRight");
-    isScrolledIntoViewComplete(layer1) ? layer1.classList.add("bounceIn") : layer1.classList.remove("bounceIn");
 }
