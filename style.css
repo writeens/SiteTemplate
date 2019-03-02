@@ -323,6 +323,9 @@ body{
     background-color: rgba(173, 173, 173, 0.5);
     width: 350px;
 }
+.input input::placeholder, .textarea textarea::placeholder {
+    color: black;
+}
 .contact-button {
     display: flex;
     justify-content: center;
