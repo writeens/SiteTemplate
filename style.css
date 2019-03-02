@@ -126,7 +126,7 @@ body{
     display: flex;
     max-width: 1024px;
 }
-.card {
+.layer1-card {
     margin: 0 1rem 0 1rem;
     max-width: 20rem;
     background-color: rgb(235, 233, 233);
@@ -238,7 +238,7 @@ body{
     flex-direction: row;
     max-width: 1024px;
 }
-.col-layer3 {
+.layer3-col {
     width: 250px;
     margin: 0.5rem;
     text-align: center;
@@ -390,7 +390,7 @@ body{
 .blue-bg {
     background-color: var(--blue);
 }
-@media all and (max-width: 768px) {
+@media all and (max-width: 868px) {
     .layer3 > div {
         max-width: 100vw;
     }
@@ -409,7 +409,7 @@ body{
         margin: 0.5rem;
     }
 }
-@media all and (max-width: 525px) {
+@media all and (max-width: 600px) {
     .flex-open {
         flex: 1;
         font-size: 20px;
@@ -418,7 +418,7 @@ body{
         display: flex;
         flex-direction: column;
     }
-    .card {
+    .layer1-card {
         margin-bottom: 1rem;
     }
     .layer2 > div {
@@ -433,9 +433,10 @@ body{
     .layer3 > div {
         display: flex;
         flex-direction: column;
+        width: 90%;
     }
-    .col-layer3 {
-        width: 80vw;
+    .layer3-col {
+        width: 85vw;
     }
     .layer4 > div {
         width: 90vw;
