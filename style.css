@@ -40,14 +40,14 @@ body{
     list-style-type: none;
     text-align: center;
     margin:0.8rem;
-    border-bottom: 0.1px solid grey;
-    padding: 0.8rem;
 }
 .nav li a {
     text-decoration: none;
     text-decoration-color: none;
     color: white;
-    display: inline-block;
+    display: block;
+    border-bottom: 0.1rem solid grey;
+    padding: 0.8rem;
 }
 .navbar-toggle {
     position: absolute;
